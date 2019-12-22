@@ -16,7 +16,7 @@ const { errors } = valid.isPassword("password").isEmail("email");
 console.log(errors);
 ```
 
-Output
+Output:
 
 ```
 [ { password: 'Password Should contain numbers and characters' } ]
