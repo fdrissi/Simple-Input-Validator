@@ -30,7 +30,7 @@ module.exports = middleware = {
     const validLogin = new validate(req.body);
     let { errors } = validLogin.required("email").required("password");
     if (errors.length > 0)
-      return res.status(400).json({ success: false, errorMsg: "Input error" });
+      return res.status(400).json({ errors });
     next();
   }
 }
