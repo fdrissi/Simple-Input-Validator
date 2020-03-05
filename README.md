@@ -11,8 +11,8 @@ const body = {
   password: "123456"
 };
 
-let valid = new validate(body);
-const { errors } = valid.isPassword("password").isEmail("email");
+const validator = new validate(body);
+const { errors } = validator.isPassword("password").isEmail("email");
 console.log(errors);
 ```
 
@@ -27,8 +27,8 @@ Output:
 ```
 module.exports = middleware = {
   login: function(req, res, next) {
-    const validLogin = new validate(req.body);
-    let { errors } = validLogin.required("email").required("password");
+    const loginValidator = new validate(req.body);
+    let { errors } = loginValidator.required("email").required("password");
     if (errors.length > 0)
       return res.status(400).json({ errors });
     next();
